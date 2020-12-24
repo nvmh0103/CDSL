@@ -75,7 +75,7 @@ begin
     select @ngsinh=ngsinh
     from Khachhang
     where makh=@makh
-    if (@ngsinh=@ngaydat)
+    if (month(@ngsinh)=month(@ngaydat) and day(@ngsinh)=day(@ngaydat))
     begin
         update Datphong
         set ghichu='sinh nhat cua khach hang'
